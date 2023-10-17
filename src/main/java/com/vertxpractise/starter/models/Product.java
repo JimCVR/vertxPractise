@@ -1,4 +1,4 @@
-package com.vertxpractise.starter.modules;
+package com.vertxpractise.starter.models;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,8 +1,8 @@
 package com.vertxpractise.starter;
 
-import com.vertxpractise.starter.modules.Order;
-import com.vertxpractise.starter.modules.Product;
-import com.vertxpractise.starter.modules.User;
+import com.vertxpractise.starter.models.Order;
+import com.vertxpractise.starter.models.Product;
+import com.vertxpractise.starter.models.User;
 
 import java.util.ArrayList;
 import java.util.List;

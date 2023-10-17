@@ -2,21 +2,17 @@ package com.vertxpractise.starter;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
-import com.vertxpractise.starter.modules.Order;
-import com.vertxpractise.starter.modules.Product;
-import com.vertxpractise.starter.modules.User;
+import com.vertxpractise.starter.models.Order;
+import com.vertxpractise.starter.models.Product;
+import com.vertxpractise.starter.models.User;
 import io.vertx.core.AbstractVerticle;
-import io.vertx.core.Future;
 import io.vertx.core.Vertx;
-import io.vertx.core.buffer.Buffer;
 import io.vertx.core.http.*;
 import io.vertx.core.json.Json;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
-import lombok.val;
 
 import java.net.URI;
 import java.net.http.HttpClient;
