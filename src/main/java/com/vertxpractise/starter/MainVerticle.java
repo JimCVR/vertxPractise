@@ -58,32 +58,6 @@ public class MainVerticle extends AbstractVerticle {
         response.putHeader("content-type","application/json").end(jsonArray.toString());
     }
 
-    public static void main(String[] args) throws Exception {
-        var vertx = Vertx.vertx();
-        var options = new HttpClientOptions().setDefaultPort(8080);
-        var client =  vertx.createHttpClient(options);
-        HttpRequest request = HttpRequest
-            .newBuilder(new URI("http://localhost:8080/orders"))
-            .GET()
-            .build();
-        HttpRequest request2 = HttpRequest
-            .newBuilder(new URI("http://localhost:8080/products"))
-            .GET()
-            .build();
-        HttpRequest request3 = HttpRequest
-            .newBuilder(new URI("http://localhost:8080/users"))
-            .GET()
-            .build();
-        CompletableFuture <HttpResponse<String>> orders = HttpClient.newHttpClient().sendAsync(request,HttpResponse.BodyHandlers.ofString());
-        CompletableFuture <HttpResponse<String>> products = HttpClient.newHttpClient().sendAsync(request2,HttpResponse.BodyHandlers.ofString());
-        CompletableFuture <HttpResponse<String>> users = HttpClient.newHttpClient().sendAsync(request3,HttpResponse.BodyHandlers.ofString());
-        ObjectMapper objectMapper = new ObjectMapper();
-        List<Order> orderResponse = objectMapper.readValue(orders.get().body(), new TypeReference<>(){});
-        List<Product> productResponse = objectMapper.readValue(products.get().body(), new TypeReference<>(){});
-        List<User> userResponse = objectMapper.readValue(users.get().body(), new TypeReference<>(){});
-        System.out.println(orderResponse.toString());
-        System.out.println(productResponse.toString());
-        System.out.println(userResponse.toString());
-    }
+
 }
 
